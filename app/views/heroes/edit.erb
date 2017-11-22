@@ -1,0 +1,6 @@
+<%= link_to 'universe', universe_path(@universe) %>
+
+<%= form_for @hero do |f| %>
+	<p><%= f.text_field :name %></p>
+	<p><%= f.submit %></p>
+<% end %>

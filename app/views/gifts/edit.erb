@@ -1,0 +1,6 @@
+<%= link_to 'hero', hero_path(@hero) %>
+
+<%= form_for @skill do |f| %>
+	<p><%= f.text_field :name %></p>
+	<p><%= f.submit %></p>
+<% end %>

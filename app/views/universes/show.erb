@@ -1,0 +1,18 @@
+<%= link_to 'universes', universes_path %>
+<%= image_tag(@universe.avatar_url) if @universe.avatar? %>
+<h1><%= @universe.name %></h1>
+<h2>heroes:</h2>
+<% @heroes.each do |hero| %>
+	<div>
+	<%= hero.name %> 
+	<span><%= link_to 'delete', hero_path(hero), method: :delete %> </span> 
+	<span><%= link_to 'Show', hero_path(hero) %></span> 
+	<span><%= link_to 'Edit', edit_hero_path(hero) %></span> 
+	</div>
+<% end %>
+<%= form_for @hero, url: universe_heroes_path(@universe) do |f| %>
+	<p><%= f.text_field :name %></p>
+	<p><%= f.submit %></p>
+<% end %>
+
+<%= will_paginate @heroes %>

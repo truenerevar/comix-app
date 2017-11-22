@@ -1,0 +1,6 @@
+<%= link_to 'gift', gift_path(@gift) %>
+
+<%= form_for @skill do |f| %>
+	<p><%= f.text_field :name %></p>
+	<p><%= f.submit %></p>
+<% end %>

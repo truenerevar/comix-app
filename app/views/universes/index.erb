@@ -1,0 +1,16 @@
+
+<% @universes.each do |universe| %>
+	<div>
+	<%= universe.name %> 
+	<span><%= link_to 'delete', universe_path(universe), method: :delete %> </span> 
+	<span><%= link_to 'Show', universe_path(universe) %></span> 
+	<span><%= link_to 'Edit', edit_universe_path(universe) %></span> 
+	</div>
+<% end %>
+<%= form_for @universe do |f| %>
+	<p><%= f.text_field :name %></p>
+	<p><%= f.file_field :avatar %></p>
+	<p><%= f.submit %></p>
+<% end %>
+
+<%= will_paginate @universes %>

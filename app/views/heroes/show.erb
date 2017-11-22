@@ -1,0 +1,18 @@
+<%= link_to 'universe', universe_path(@universe) %>
+
+<h1><%= @hero.name %></h1>
+<h2>gifts:</h2>
+<% @gifts.each do |gift| %>
+	<div>
+	<%= gift.name %> 
+	<span><%= link_to 'delete', gift_path(gift), method: :delete %> </span> 
+	<span><%= link_to 'Show', gift_path(gift) %></span> 
+	<span><%= link_to 'Edit', edit_gift_path(gift) %></span> 
+	</div>
+<% end %>
+<%= form_for @gift, url: hero_gifts_path(@hero) do |f| %>
+	<p><%= f.text_field :name %></p>
+	<p><%= f.submit %></p>
+<% end %>
+
+<%= will_paginate @gifts %>
