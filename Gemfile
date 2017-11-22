@@ -5,6 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'activeadmin'
+
+# Plus integrations with:
+
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
 
 gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'carrierwave', '~> 1.0'
